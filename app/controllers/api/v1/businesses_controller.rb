@@ -16,7 +16,7 @@ module Api
             business: @business
           }
         else
-          render status: 406, json: {
+          render status: 400, json: {
             error: @business.errors.full_messages
           } 
         end 
