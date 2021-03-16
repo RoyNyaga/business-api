@@ -2,6 +2,13 @@ module Api
   module V1
     class BusinessesController < ApplicationController
 
+      def index 
+        @businesses = Business.all 
+        render status: 200, json: {
+          businesses: @businesses
+        }
+      end 
+
       def create 
         @business = Business.new(business_params)
         if @business.save 
